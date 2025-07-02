@@ -1,11 +1,13 @@
 @include('layout.header')
-        <div class="bg-white rounded shadow p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-semibold">Kategori</h3>
-                <a href="{{ route('kategori.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Tambah</a>
-            </div>
+     <h3>Buat Kategori</h3> 
+     <form action="{{ route('kategori.store') }}" method="post">
+        @csrf
+        <div class="form-group">
+            <label for="">Nama Kategori:</label>
+            <input type="text" name="nama_kategori" id="" placeholder="Masukkan nama kategori">
         </div>
-    </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Simpan</button>
+     </form>
      @include('layout.footer')
 
  
