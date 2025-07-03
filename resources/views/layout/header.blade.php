@@ -9,6 +9,15 @@
 <body class="bg-gray-100 font-sans text-gray-800">
     <div class="container mx-auto p-6">
         <h1 class="text-3xl font-bold mb-4 text-center">Aplikasi Manajemen Data Buku</h1>
+        @if(Auth::check())
+        <div style="text-align: center; margin-bottom: 20px;">
+        <p style="margin-bottom: 10px;"> Anda login sebagai: <strong>{{ Auth::user()->name }}</strong></p>
+        <form action="{{ route('logout') }}" method="post">
+        @csrf
+        <button type="submit" class="text-red-600 hover:underline">Logout</button>  
+        </form>
+        </div>
+        @endif
 
         <nav class="mb-6 bg-white shadow rounded p-4">
             <ul class="flex space-x-4 justify-center">
